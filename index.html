@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LENS+</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <img src="assets/logo.png.png" alt="LENS+ Logo">
+                <span>LENS+</span>
+            </div>
+
+            <button class="new-chat" onclick="newChat()">
+                + New Report
+            </button>
+
+            <div class="side-section">
+
+                <p class="section-title">Report Language</p>
+
+                <button class="language active" onclick="selectLanguage(this, 'English')">
+                    English
+                </button>
+
+                <button class="language" onclick="selectLanguage(this, 'Hindi')">
+                    Hindi
+                </button>
+
+                <button class="language" onclick="selectLanguage(this, 'Marathi')">
+                    Marathi
+                </button>
+
+            </div>
+
+            <div class="sidebar-bottom">
+                <p>Report Explanation</p>
+                <p>Recommendations</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CHAT -->
+        <main class="chat-area">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+                <div class="mobile-brand">
+                    <img src="assets/logo.png.png" alt="LENS+">
+                    <span>LENS+</span>
+                </div>
+
+            </header>
+
+
+            <!-- WELCOME -->
+            <section class="welcome">
+
+                <img
+                    src="assets/logo.png.png"
+                    class="welcome-logo"
+                    alt="LENS+"
+                >
+
+                <h1>Let's understand your report.</h1>
+
+                <p>
+                    Upload your medical report and I'll explain
+                    it in simple language.
+                </p>
+
+            </section>
+
+
+            <!-- CHAT MESSAGES -->
+            <div id="chatMessages" class="chat-messages"></div>
+
+
+            <!-- INPUT AREA -->
+            <div class="input-container">
+
+                <div class="input-box">
+
+                    <label for="fileInput" class="upload-btn">
+                        +
+                    </label>
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept="image/*,.pdf"
+                        hidden
+                        onchange="handleFile(event)"
+                    >
+
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Ask about your report..."
+                        onkeydown="handleEnter(event)"
+                    >
+
+                    <button class="send-btn" onclick="sendMessage()">
+                        ↑
+                    </button>
+
+                </div>
+
+                <p class="disclaimer">
+                    LENS+ explains medical reports for informational purposes only.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
