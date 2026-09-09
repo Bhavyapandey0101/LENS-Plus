@@ -19,7 +19,14 @@ function addMessage(text, type) {
         type === "user" ? "user-message" : "bot-message"
     );
 
-    message.textContent = text;
+    message.innerHTML = text
+    message.innerHTML = text
+    .replace(/^### (.*?)$/gm, "<h3>$1</h3>")
+    .replace(/^## (.*?)$/gm, "<h3>$1</h3>")
+    .replace(/^# (.*?)$/gm, "<h2>$1</h2>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/^- (.*?)$/gm, "• $1<br>")
+    .replace(/\n/g, "<br>");
 
     chat.appendChild(message);
     chat.scrollTop = chat.scrollHeight;
