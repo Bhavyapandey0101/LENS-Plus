@@ -47,7 +47,7 @@ async function sendMessage() {
 
     try {
         const response = await fetch(
-            "http://127.0.0.1:5000/chat",
+            "https://lens-plus.onrender.com/chat",
             {
                 method: "POST",
                 headers: {
@@ -124,7 +124,7 @@ async function handleFile(event) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/analyze",
+            "https://lens-plus.onrender.com/analyze",
             {
                 method: "POST",
                 body: formData
